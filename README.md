@@ -24,8 +24,9 @@ The `alternateKey` attribute tells the plugin which column to read from `trackMe
 If your `trackMetadata.csv` has a column named `short_name`:
 ```
 key,label,short_name
-"Gene Prediction Track from NCBI RefSeq",gene_prediction_track_from_ncbi_refseq,"NCBI RefSeq"
-"Gene Prediction Track from Ensembl 91",gene_prediction_track_from_ensembl_91,"Ensembl 91"
+"Reference Sequence",DNA,"GRCh38"
+"Homo sapiens Ensembl 91 annotations",homo_sapiens_ensembl,"Ensembl 91"
+"1000 Genomes phase 3 variants",1000GENOMES_phase_3_variants,"1000 Genomes (Phase 3)"
 ```
 
 Then add the following to `trackList.json`:
@@ -43,4 +44,12 @@ Then add the following to `trackList.json`:
 
 In this example, alternate key for each track is read from the `short_name` column.
 
+### Screenshot
 
+**Before**:
+
+<img src="img/1.png" width="800">
+
+**After**:
+
+<img src="img/2.png" width="800">
