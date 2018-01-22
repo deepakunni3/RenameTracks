@@ -14,6 +14,10 @@ return declare( JBrowsePlugin,
         console.log("RenameTracks plugin starting");
         var browser = args.browser;
 
+        if (!browser.config.trackMetadata) {
+            return;
+        }
+
         dojo.subscribe("/jbrowse/v1/c/tracks/show", function(data) {
             // everytime a track is shown, check for an alternateKey; if it exists then
             // replace track's key with the alternateKey
