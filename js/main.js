@@ -23,8 +23,10 @@ return declare( JBrowsePlugin,
                 var alternateKeyName = browser.config.trackMetadata.alternateKey ? browser.config.trackMetadata.alternateKey : "alternate_key";
                 if (alternateKeyName) {
                     var trackMetadata = browser.trackMetaDataStore.getItem(label);
-                    var alternateKeyValue = trackMetadata[alternateKeyName];
-                    if (alternateKeyValue) browser.trackConfigsByName[label].key = alternateKeyValue;
+                    if (trackMetadata.hasOwnProperty(alternateKeyName)) {
+                        var alternateKeyValue = trackMetadata[alternateKeyName];
+                        if (alternateKeyValue) browser.trackConfigsByName[label].key = alternateKeyValue;
+                    }
                 }
             }
         });
